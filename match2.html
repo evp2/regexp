@@ -1,0 +1,214 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+<title>My page</title>
+</head>
+<body>
+<h4>Evan Pomponio</h4>
+<button onclick="myFunction();">Search</button>  
+<script type="text/javascript">
+    var list1 = [
+    "afoot",
+    "catfoot",
+    "dogfoot",
+    "fanfoot",
+    "foody",
+    "foolery",
+    "foolish",
+    "fooster",
+    "footage",
+    "foothot",
+    "footle",
+    "footpad",
+    "footway",
+    "hotfoot",
+    "jawfoot",
+    "mafoo",
+    "nonfood",
+    "padfoot",
+    "prefool",
+    "sfoot",
+    "unfool"
+    ];
+    var list2 = [
+    "Atlas",
+    "Aymoro",
+    "Iberic",
+    "Mahran",
+    "Ormazd",
+    "Silipan",
+    "altared",
+    "chandoo",
+    "crenel",
+    "crooked",
+    "fardo",
+    "folksy",
+    "forest",
+    "hebamic",
+    "idgah",
+    "manlike",
+    "marly",
+    "palazzi",
+    "sixfold",
+    "tarrock",
+    "unfold"
+    ];    
+    var list3 = [
+    "Mick",
+    "Rick",
+    "allocochick",
+    "backtrick",
+    "bestick",
+    "candlestick",
+    "counterprick",
+    "heartsick",
+    "lampwick",
+    "lick",
+    "lungsick",
+    "potstick",
+    "quick",
+    "rampick",
+    "rebrick",
+    "relick",
+    "seasick",
+    "slick",
+    "tick",
+    "unsick",
+    "upstick"	
+    ];   
+    var list4 = [
+    "Kickapoo",
+    "Nickneven",
+    "Rickettsiales",
+    "billsticker",
+    "borickite",
+    "chickell",
+    "fickleness",
+    "finickily",
+    "kilbrickenite",
+    "lickpenny",
+    "mispickel",
+    "quickfoot",
+    "quickhatch",
+    "ricksha",
+    "rollicking",
+    "slapsticky",
+    "snickdrawing",
+    "sunstricken",
+    "tricklingly",
+    "unlicked",
+    "unnickeled"
+    ]; 
+    var list5 = [
+    "abac",
+    "accede",
+    "adead",
+    "babe",
+    "bead",
+    "bebed",
+    "bedad",
+    "bedded",
+    "bedead",
+    "bedeaf",
+    "caba",
+    "caffa",
+    "dace",
+    "dade",
+    "daff",
+    "dead",
+    "deed",
+    "deface",
+    "faded",
+    "faff",
+    "feed"	
+    ];
+    var list6 = [
+    "beam",
+    "buoy",
+    "canjac",
+    "chymia",
+    "corah",
+    "cupula",
+    "griece",
+    "hafter",
+    "idic",
+    "lucy",
+    "martyr",
+    "matron",
+    "messrs",
+    "mucose",
+    "relose",
+    "sonly",
+    "tegua",
+    "threap",
+    "towned",
+    "widish",
+    "yite"
+    ];
+var list7 = [
+    "fu",
+    "tofu",
+    "snafu"
+];
+var list8 = [
+    "futz",
+    "fusillade",
+    "functional",
+    "discombobulated"
+];
+function printArr(arr1,arr2){
+    for(var i=0;i<arr1.length;i++){
+        document.writeln(arr1[i]+"<br/>");
+    }
+    for(var j=0;j<arr2.length;j++){
+        document.writeln(arr2[j]+"<br/>");
+    }
+}
+function checkPattern(str){
+   var arr=[];
+   for (var j=0; j<list7.length; j++) {
+        if (list7[j].search(str)>-1){
+        arr.push(list7[j]);
+        }
+    }
+    var matchesFirst=arr.length;
+    console.log("matched "+matchesFirst+" in first list");
+    for (var k=0; k<list8.length; k++) {
+        if (list8[k].search(str)>-1){
+        arr.push(list8[k]);
+        }
+    }
+    var matchesSecond=arr.length-matchesFirst;
+    console.log("matched " + matchesSecond + " in second list");
+    return arr;
+}
+function myFunction() {
+  var str =prompt("Please enter your Search Pattern","");
+  var match = checkPattern(str);
+  if (match===undefined){
+    document.writeln("not found <br/>");
+  } 
+  else
+    console.log("match length: "+match.length);
+   for (var j=0; j<match.length; j++) {  
+            console.log(j+", "+match[j]); 
+   }
+   var shortest=match[0];
+   for(var k=0; k<match.length; k++){
+      if(match[k].length<shortest.length){
+      shortest=match[k];
+      }
+   }
+    printArr(list7,list8);
+    document.writeln("pattern: <b>" +  str + "</b><br/>");
+    document.writeln("num of matched of words: <b>" + match.length + "</b><br/>");   
+    document.writeln("shortest in match: <b>" + shortest + "</b><br/>");
+    document.writeln("length of pattern: <b>" + str.length + "</b><br/>");
+}
+
+
+</script>
+
+</body>
+</html>

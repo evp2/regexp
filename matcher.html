@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+<title>RegExp</title>
+</head>
+<body>
+<h4>Evan Pomponio</h4>
+<button onclick="printArr();myFunction();">Search</button>  
+<script type="text/javascript">
+    var words = [
+    "anyway", 
+    "bone",
+    "cinema",
+    "cover",
+    "define",
+    "economy",
+    "eleven",
+    "eye",
+    "hesitate",
+    "key",
+    "majority",
+    "music",
+    "palace",
+    "potato",
+    "relax",
+    "royal",
+    "surely",
+    "typical",
+    "vocabulary",
+    "water"
+    ];
+    
+function printArr(){
+    for(var i=0;i<words.length;i++){
+        document.writeln(words[i]+"<br/>");
+    }
+}
+function checkPattern(str){
+  var arr=[];
+   for (var j=0; j<words.length; j++) {
+        if (words[j].search(str)>-1){
+            arr.push(words[j]); 
+        }
+    }
+    return arr;
+}
+function myFunction() {
+  var str = prompt("Please enter your Search Term");
+  var array = checkPattern(str);
+  if (array === undefined){
+    document.writeln("not found");
+  } 
+  else
+  var match=[];
+   for (var j=0; j<words.length; j++) {
+    if (words[j].search(str)>-1){
+            console.log(words[j]);
+            console.log(words[j].search(str));
+            this.match.push(words[j]);
+        } 
+   }
+   var shortest=this.match[0];
+   for(var k=0; k<this.match.length; k++){
+      if(this.match[k].length<shortest.length){
+      shortest=this.match[k];
+      }
+   }
+    document.writeln("search: " +  str + "<br/>");
+    document.writeln("num of matched of words: " + this.match.length +"<br/>");   
+    document.writeln("shortest in match: " + shortest + "<br/>");
+    document.writeln("length of pattern: "+str.length+"<br/>");
+}
+</script>
+
+</body>
+</html>
